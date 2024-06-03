@@ -1,0 +1,11 @@
+*{
+    color:rgb(0, 0, 255);
+}
+body {
+    background-color: rgb(248, 217, 222);
+}
+ul li{
+    color: red;
+}
+.orange {color: orange;}
+#tomato {color:rgb(255, 0, 0);}

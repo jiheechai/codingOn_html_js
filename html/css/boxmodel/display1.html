@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바깥 여백 - margin</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            /* 배치 방법 - display: inlink-block(수평) */
+            /* display: inline-block */
+            /* div태그 - 수직 배치가 기본(default) */
+            display: inline-block;
+        }
+        #box1{
+            background-color: red;
+            /* 모든방향에 20px 적용 */
+            margin: 20px;
+
+            /* top,bottom:20px. left,right:10px */
+            /* margin: 20px 10px; */
+        }
+        #box2{
+            background-color: green;
+            margin: 30px 20px;
+        }
+        #box3{
+            background-color: blue;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+</html>

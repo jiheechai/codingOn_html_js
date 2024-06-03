@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바깥 여백 - margin</title>
+    <style>
+        /* 마진 중첩 - 수직 배치일 경우에는 margin - top, bottom은 
+        마진이 중첩될 경우 마진이 큰쪽으로 설정된다. */
+        div{
+            width: 200px;
+            height: 100px;
+        }
+        #box1{
+            background-color: red;
+            /* 모든방향에 20px 적용 */
+            margin: 20px;
+
+            /* top,bottom:20px. left,right:10px */
+            /* margin: 20px 10px; */
+        }
+        #box2{
+            background-color: green;
+            margin: 30px 20px;
+        }
+        #box3{
+            background-color: blue;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+</html>
