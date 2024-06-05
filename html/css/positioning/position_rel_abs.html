@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 속성 예제</title>
+    <style>
+        #wrap{
+            /* 겉에 가장 큰 사각형 */
+            width: 200px;
+            height: 200px;
+            border: 1px solid #222;
+            margin: 100px;
+            /* 기준이 부모 요소가 됨 */
+            position: relative; 
+        }
+        #wrap div{
+            /* 사각형 모양과 색상 */
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+        #box1{
+            position: absolute;
+            top: 50px;
+            left: 100px;
+        }
+        #box2{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #box3{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #box4{
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+        #box5{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="box1">1</div>
+        <div id="box2">2</div>
+        <div id="box3">3</div>
+        <div id="box4">4</div>
+        <div id="box5">5</div>
+    </div>
+    
+</body>
+</html>

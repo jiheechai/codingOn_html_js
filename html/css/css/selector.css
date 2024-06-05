@@ -1,0 +1,29 @@
+/* 연결 선택(후손) - 요소 간 공백이 있으면 하위의 모든 요소에 적용 */
+/* #content p{
+    color: blue;
+} */
+/* 연결 선택(후손) - 요소 간 ">"이 있으면 바로 아래 요소만 적용 */
+body{
+    margin: 0 auto ;
+}
+#content1 {
+    width: 600px;
+    border: 5px solid navy;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+#content2 {
+    width: 600px;
+}
+#content1 > #p1{
+    color: blue;
+    background-color: beige;
+}
+#content1 > h2{
+    font-family: 'Times New Roman', Times, serif;
+    /* 폰트 이름 중간에 공백이 있을 경우 ''로 감싸줘야한다 */
+}
+#content1 > #content2 > #p2{
+    color: navy;
+    background-color: lightgreen;
+}

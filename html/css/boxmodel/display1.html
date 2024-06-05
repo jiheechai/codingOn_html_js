@@ -1,3 +1,4 @@
+<!-- 수정필요. 미완성(rel, avs, fix 설정 미완료) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
             /* div태그 - 수직 배치가 기본(default) */
             display: inline-block;
         }
-        #box1{
+        .relative{
             background-color: red;
             /* 모든방향에 20px 적용 */
             margin: 20px;
@@ -21,19 +22,19 @@
             /* top,bottom:20px. left,right:10px */
             /* margin: 20px 10px; */
         }
-        #box2{
+        .absolute{
             background-color: green;
             margin: 30px 20px;
         }
-        #box3{
+        .fix{
             background-color: blue;
             margin: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="box1"></div>
-    <div id="box2"></div>
-    <div id="box3"></div>
+    <div class="relative"></div>
+    <div class="absolute"></div>
+    <div class="fix"></div>
 </body>
 </html>

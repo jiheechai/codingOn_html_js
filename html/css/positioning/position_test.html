@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습. relative/absolute/fixed</title>
+    <style>
+        #wrap{
+            width: 500px;
+            height: 500px;
+            border: 15px solid #222;
+            /* margin: 100px; */
+            position: relative;
+            position: fixed;
+        }
+        #wrap div{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        #item1{
+            left:50px;
+            top:30px;
+            background-color: orange;
+            position: absolute;
+        }
+        #item2{
+            right: 30px;
+            bottom: 100px;
+            position: absolute;
+            background-color: yellow;
+        }
+        #item3{
+            width: 100px;
+            height: 100px;
+            right: 100px;
+            top: 100px;
+            position: absolute;
+            background-color: green;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="item1">item1</div>
+        <div id="item2">item2</div>
+    </div>
+    <div id="item3">item3</div>
+</body>
+</html>
