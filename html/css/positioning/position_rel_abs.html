@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>position 속성 예제</title>
+    <!-- 스타일 우선순위 : 인라인>내부스타일>외부스타일 -->
     <style>
         #wrap{
             /* 겉에 가장 큰 사각형 */
@@ -36,9 +37,11 @@
             right: 0;
         }
         #box4{
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
+            /* position: absolute; */
+            /* fixed: 브라우저 창 기준 */
+            position: fixed;
+            top: 20px;
+            right: 30px;
         }
         #box5{
             position: absolute;

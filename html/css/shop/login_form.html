@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 폼</title>
+</head>
+<body>
+    <h1 style="color: blue;">로그인</h1>
+    <!-- 전송방식: post(보안유지-보이지않음*처리) -->
+    <!-- 전송방식: get(브라우저에서 보임) -->
+    
+    <form action="loginProcess.jsp" method="post">
+        <p>
+            <label>ID</label>
+            <input type="text" name="ID" autofocus required
+            placeholder="아이디를 입력하세요">
+            <!-- placeholder는 입력해야하는 내용에 대한 힌트 -->
+            <!-- required는 필수 입력 속성 -->
+            <!-- 원래는 속성값이기 때문에 required="required"가 맞음 -->
+
+        </p>
+        <p>
+            <label>PW</label>
+            <input type="password" name="PW" required
+            placeholder="비밀번호를 입력하세요">
+        </p>
+        <button type="submit">로그인</button>
+        <!-- submit은 form을 만드는 이유 -->
+    </form>
+</body>
+</html>

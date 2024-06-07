@@ -1,0 +1,35 @@
+<!-- 좀 더 쉬운 예제 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position : relative 예제</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .redbox{
+            background-color: red;
+        }
+        .greenbox{
+            background-color: green;
+            
+            /* relative는 상대방 기준.(상대적인) 좌측상단에서 출발. */
+            position: relative;
+            /* position: absolute; (절대적인)absolute는 좌측상단 브라우저 창이 기준.*/
+            left: 100px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 너비가 100px인 빨간색 정사각형 -->
+    <div class="box redbox"></div>
+    
+    <!-- 너비가 100px인 초록색 정사각형 -->
+    <div class="box greenbox"></div>
+</body>
+</html>

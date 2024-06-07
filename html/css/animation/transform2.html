@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform(변형) 속성</title>
+    <style>
+        div.b{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+            /* rotate(각도) degree단위 사용 */
+        }
+        div.b:hover{
+            transform: rotate(45deg);
+        }
+        div.c{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+        }
+        div.c:hover{
+            transform: translateX(50px);
+        }
+        div.d{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+        }
+        div.d:hover{
+            transform: scale(1.5);
+        }
+
+        div.e{
+            width: 150px;
+            height: 80px;
+            background-color: greenyellow;
+        }
+        div.e:hover{
+            /* skey(x축 각도, y축 각도); */
+            transform: skew(20deg, 30deg);
+        }
+
+    </style>
+</head>
+<body>
+    <h2>transform: rotate(20deg)</h2>
+    <div class="b">Hello world!</div>
+    <!--각도-->
+    <h2>transform: translateX(50px)</h2>
+    <div class="c">Hello world!</div>
+    <!-- translateX(거리) px사용 x축, y축 -->
+    <h2>transform: scale(1.5)</h2>
+    <div class="d">Hello world!</div>
+    <!-- scale(크기), 배수(1.5, 2) 사용 -->
+
+    <h2>transform: skew(20deg)</h2>
+    <div class="e">Hello world!</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/* 공통 스타일 */
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #f1f1f1;
+}
+ul li{
+    list-style: none;
+}
+#container{
+    width: 100%;
+    margin: 0 auto;
+}
+header{
+    /* width: 1000px; */
+    height: 80px;
+    background-color: rgb(8, 8, 79);
+}
+header #logo{
+    width: 20%;
+    /* height: 80px; */
+    float: left;
+    line-height: 80px;
+    padding-left: 40px;
+}
+header #logo h1 a{
+    color: skyblue;
+}
+header #logo h1 a:hover{
+    color: #f1f1f1;
+}
+header nav{
+    width: 75%;
+    /* height: 80px; */
+    float: right;
+    line-height: 80px;
+}
+header nav ul{
+    padding-left: 100px;
+}
+header nav ul li{
+    float: left;
+}
+header nav ul li:hover{
+    background-color: aqua;
+}
+header nav ul li a{
+    display: block;
+    padding: 0 30px;    
+}
+#main{
+    width: 1000px;
+    margin: 30px auto;
+}
+#main #contents{
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* index 스타일 */
+#main #contents h1{
+    text-align: center;
+    margin: 20px;
+}
+#main #contents .main_pic{
+    width: 500px;
+    margin: 0 auto;
+}
+#main #contents .main_pic img{
+    width: 500px;
+    height: 500px;
+    border-radius: 6px;
+}
+
+/* product style */
+#main #contents .product_h1{text-align: left;}
+#contents #watermelon, #strawberry{
+    height: 350px;
+}
+#contents #watermelon img, #strawberry img{
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin-right: 16px;
+    border-radius: 6px;
+}
+#contents #watermelon p, #strawberry p{
+    line-height: 2;
+}
+
+/* board 스타일 */
+#contents table{
+    width: 700px;
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+    margin: 30px 0 150px;
+}
+#contents table th, td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+#contents table thead{
+    background-color: #eee;
+}
+/*  */
+#contents table tr td:nth-of-type(2){
+    text-align: left;
+}
+
+/* 로그인 스타일 */
+#contents form{
+    width: 440px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+#contents form ul{
+    padding: 20px 40px;
+}
+#contents form ul li{
+    margin: 20px;
+}
+#contents form label{
+    width: 80px;
+    float: left;
+}
+
+
+/* footer 스타일 */
+footer{
+    bottom: 0px;
+	position: absolute;
+    width: 100%;
+    height: 80px;
+    border-top: 2px solid #222;
+}
+footer #footer_menu{
+    margin: 10px 40px;
+}
+footer #footer_menu li{
+    float: left;
+    border-right: 2px solid #ccc;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+footer #footer_menu li a{
+    color: #444;
+}
+footer #footer_menu li:nth-child(4){
+    border:none;
+}

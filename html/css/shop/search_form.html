@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 폼</title>
+</head>
+<body>
+    <h2>코딩온 검색</h2>
+    <!-- form에 method(전송)방식: get, post(보안) -->
+    <form action="search" method="get">
+        <p>
+            <!-- input : 한 줄 입력 -->
+            <!-- type: text(글자), submit(서버에 전송) -->
+            <!-- name: 서버페이지와 연동하는 속성 -->
+            <input type="text" name="q"
+                placeholder="검색어 입력">
+            <button type="submit">검색</button>
+            <input type="submit" value="search">
+        </p>
+
+    </form>    
+</body>
+</html>

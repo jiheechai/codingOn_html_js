@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택 버튼(radio)과 체크 버튼(check box)</title>
+</head>
+<body>
+    <form action="">
+        <!-- fieldset : 테두리가 생김 -->
+        <fieldset>
+            <legend>성별</legend>
+            <p style="text-align: center;">당신의 성별을 선택하세요</p>
+            <div style="text-align: center;">
+                <label><input type="radio" name="gender" value="male" checked>남자</label>
+                <label><input type="radio" name="gender" value="female" >여자</label>
+                <!-- radio 타입 버튼은 같은 name속성을 하나로 한다 -->
+                <!-- 하나의 radio안에서 같은 name 속성의 보기 중복 선택불가 -->
+                <!-- checked: 화면 로딩시 자동으로 체크된 상태로 로딩 -->
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>취미</legend>
+            <p style="text-align: center;">당신의 취미를 선택하세요</p>
+            <h6 style="text-align: center;">복수 선택 가능</h6>
+            <div style="text-align: center;">
+                <label><input type="checkbox" name="hobby" value="movie">영화</label>
+                <label><input type="checkbox" name="hobby" value="cafe">카페</label>
+                <label><input type="checkbox" name="hobby" value="museum">전시회</label>
+            </div>
+        </fieldset>
+        <br>
+        <div style="text-align: center;">
+            <!-- <button type="submit">가입</button> -->
+            <input type="submit" value="가입">
+        </div>
+    </form>
+</body>
+</html>
