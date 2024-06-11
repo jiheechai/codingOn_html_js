@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 예제</title>
+    <style>
+        #wrap{
+            /* 수평으로 배치. 소속이 부모자식관계에서 부모쪽에 flex사용. */
+            display: flex;
+            /* flex의 기본속성은 수평(row-행, 줄). */
+            flex-direction: row;
+            /* column: 방향이 수직임.(column-열, 칸) */
+            /* flex-direction: column; */
+        }
+        #wrap .box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px;
+            /* display: inline-block; */
+            /* inline-block과 동일한것 = float:left; */
+        }
+    </style>
+</head>
+<body>
+    <!-- flex는 부모자식관계에서 사용. -->
+    <div id="wrap">
+        <!-- class는 공통속성 지정할때 사용 -->
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    
+</body>
+</html>

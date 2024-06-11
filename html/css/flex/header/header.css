@@ -1,0 +1,59 @@
+/* 공통 스타일 */
+*{margin: 0; padding:0;}
+a{
+    text-decoration: none;
+    color: white;
+}
+ul li{
+    list-style: none;
+}
+
+/*  */
+/* 모바일 기준 */
+/* header 스타일 */
+header .navbar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(1, 1, 73);
+    padding: 8px 24px;
+}
+header .navbar_logo a:hover{
+    color: skyblue;
+}
+header .navbar_logo{
+    font-size: 24px;
+    padding-left: 20px;
+}
+/* ul. width가 필요 */
+header .navbar_menu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+header .navbar_menu li{
+    text-align: center;
+    padding: 10px;
+}
+header .navbar_menu li:hover{
+    background: skyblue;
+    border-radius: 4px;
+}
+
+/*  */
+/* pc기준 */
+@media screen and (min-width: 768px) {
+    header .navbar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    header .navbar_menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* margin-right: 100px; */
+    }
+    header .navbar_menu li{
+        padding: 16px 24px;
+    }
+}

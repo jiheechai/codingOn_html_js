@@ -1,0 +1,342 @@
+@charset "utf-8";
+/* 공통 스타일 */
+/* 모바일 기기 기준 */
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #F1F1F1;
+}
+ul li{
+    list-style: none;
+}
+#container{
+    width: 100%;
+    min-height: 800px;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    height: 240px;
+    background-color: navy;
+}
+header #logo{
+    width: 10%;
+    height: 240px;
+    float: left;
+    margin-top: 5px;
+    padding-left: 20px;
+}
+header #logo h1{
+    font-size: 26px;
+}
+header #logo h1 a:hover{
+    color: greenyellow;
+}
+header nav{
+    width: 75%;
+    float: left;
+    height: 240px;
+    margin-top: 50px;
+}
+header nav ul li{
+    text-align: center;
+}
+header nav ul li a{
+    display: block;
+    padding: 12px;
+}
+header nav ul li a:hover{
+    background-color: lightblue;
+    border-radius: 3px;
+    color: black;
+}
+#container #main{
+    width: 90%;
+    margin: 0 auto;
+}
+/* 가변 크기는 %를 사용함, 부모의 크기에 대한 상대 비율 */
+#container #main #contents{
+    width: 90%;
+    margin: 0 auto;
+}
+#main #contents h2{
+    text-align: center;
+    font-size: 22px;
+}
+footer {
+    margin-top: 100px;
+    width: 100%;
+    height: 50px;
+    border-top: 2px solid black;
+    position: relative;
+    bottom: 0;
+}
+footer #footer_menu{
+    margin: 10px 20px;
+}
+footer #footer_menu li {
+    display: inline-block;
+    text-decoration: none;
+    border-right: 2px solid beige;
+    padding: 0px 10px;
+}
+footer #footer_menu li a{
+    text-decoration: none;
+    color: black;
+}
+footer #footer_menu li:last-child{
+    border:none;
+}
+/* index 스타일 */
+#main #contents .main_pic{
+    width: 300px;
+    margin: 20px auto;
+}
+#main #contents .main_pic img{
+    width: 300px;
+    height: 200px;
+    border-radius: 4px;
+}
+/* product 스타일 */
+#main{
+    margin: 0 auto;
+}
+#main #contents{
+    width: 70%;
+    margin: 0 auto;
+}
+#main #contents #explain_title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+#contents #watermelon, #strawberry{
+    margin: 0 auto;
+    width: 100%;
+}
+#contents #watermelon img, #strawberry img{
+    margin: 20px auto;
+    line-height: 2;
+    width: 300px;
+    height: 200px;
+    border-radius: 30px;
+}
+#contents #watermelon h3, #strawberry h3{
+    margin: 10px auto;
+    text-align: left;
+    color: red;
+}
+#contents #watermelon p, #strawberry p{
+    margin: 10px auto ;
+    font-size: 12px;
+    line-height: 2;
+    text-align: justify;
+}
+
+
+/* board 스타일 */
+#container #main #contents{
+    width: 90%;
+    margin: 0 auto;
+}
+#container #main #contents h2{
+    margin: 0 auto;
+    text-align: center;
+}
+#container #main #contents table{
+    width: 100%;
+    border: 2px solid #ccc;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+#container #main #contents table th, td{
+    border: 2px solid #ccc;
+    padding: 3px 5px;
+}
+#contents table thead{
+    background-color: beige;
+}
+#contents table tbody tr td:nth-of-type(2){
+    text-align: left;
+}
+#container #main #contents table tr th, td{
+    border: 2px solid #ccc;
+    padding: 3px 5px;
+}
+/* login 스타일 */
+#contents #main{
+    width: 80%;
+}
+#contents h2{
+    text-align: center;
+ }
+ #contents form{
+     width: 70%;
+     margin: 30px auto;
+     border: 1px solid #ccc;
+ }
+ #contents form ul li{
+     margin: 20px;
+ }
+ #contents form ul{
+     padding: 50px 10px;
+ }
+ #contents form ul li label{
+     width: 80px;
+     float: left;
+ }
+ #contents form ul #button{
+    float: right;
+    margin: 7px auto;
+ }
+
+
+
+/* PC 기준 */
+@media screen and (min-width: 800px) {
+    /* PC - header 스타일 */
+    header{
+        height: 80px;
+    }
+    header #logo{
+        height: 80px;
+        padding-left: 40px;
+        line-height: 80px;
+        margin-top: 0;
+    }
+    header #logo a{
+        font-size: 28px;
+    }
+    header nav{
+        height: 80px;
+        padding-left: 40px;
+        line-height: 80px;
+        margin-top: 0;
+    }
+    header nav ul{
+        padding-left: 240px;
+    }
+    header nav ul li{
+        float: left;
+    }
+    header nav ul li a{
+        padding: 0 30px;
+    }
+    /* PC - index 스타일 */
+    #container #main{
+        width: 1000px;
+    }
+    #container #main #contents{
+        width: 900px;
+    }
+    #main #contents h2{
+        margin-top: 20px;
+    }
+    #main #contents .main_pic{
+        width: 550px;
+        margin: 20px auto;
+    }
+    #main #contents .main_pic img{
+        width: 550px;
+        height: 360px;
+        border-radius: 4px;
+    }
+    footer{
+        margin: 10px 40px;
+    }
+    /* PC - product 스타일 */
+    #main #contents #product_h1{
+        text-align: center;
+    }
+    #contents #watermelon, #strawberry{
+        height: 350px;
+    }
+    #contents #watermelon img, #strawberry img{
+        float: left;
+        line-height: 2;
+        width: 300px;
+        height: 250px;
+        margin: 20px 16px;
+        border-radius: 30px;
+    }
+    #contents #watermelon h3, #strawberry h3{
+        text-align: left;
+        color: red;
+    }
+    #contents #watermelon p, #strawberry p{
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 2;
+    }
+    #contents #watermelon, #strawberry{
+        margin: 0 auto;
+        width: 90%;
+    }
+    /* PC - board 스타일 */
+    #container #main #contents h2{
+        margin: 30px auto;
+        text-align: center;
+    }
+    #container #main #contents table th, td{
+        border: 2px solid #ccc;
+        padding: 3px 3px;
+    }
+    #container #main #contents{
+    width: 90%;
+    margin: 0 auto;
+    }
+    #container #main #contents table{
+    width: 70%;
+    border: 2px solid #ccc;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 30px auto 100px;
+    }
+    /* PC - login  스타일 */
+    /* #contents h2{
+        text-align: center;
+     }
+     #contents form{
+         width: 40%;
+         margin: 0 auto;
+         border: 1px solid #ccc;
+     }
+     #contents form ul li{
+         margin: 20px;
+     }
+     #contents form ul{
+         padding: 20px 40px;
+     }
+     #contents form ul li label{
+         width: 80px;
+         float: left;
+     } */
+     #contents #main{
+        width: 80%;
+    }
+    #contents h2{
+        text-align: center;
+     }
+     #contents form{
+         width: 40%;
+         margin: 30px auto 300px;
+         border: 1px solid #ccc;
+     }
+     #contents form ul li{
+         margin: 20px;
+     }
+     #contents form ul{
+         padding: 50px 10px;
+     }
+     #contents form ul li label{
+         width: 80px;
+         float: left;
+     }
+     #contents form ul #button{
+        float: right;
+        margin: 7px auto;
+     }
+}
