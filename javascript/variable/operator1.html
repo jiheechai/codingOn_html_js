@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산술 연산 예제</title>
+</head>
+<body>
+    <script>
+        // 산술연산
+        console.log(3 + 4);
+        console.log(3 - 4);
+        console.log(3 * 4);
+        console.log(3 / 4);
+        console.log(3 % 4);
+
+        // var변수 보다 let변수를 더 많이 사용.
+        // 숫자변수 2개 할당
+        let n1 = 10;
+        let n2 = 4;
+
+        console.log(n1+n2);
+
+        let s1 = "감";
+        let s2 = "나무";
+        console.log(s1+s2);
+
+
+        // 변수 이름 짓기 : 의미있게(sementic), 카멜표기법 사용.
+        // 변수 이름 오류 : 띄어쓰기 안됨, 숫자로 시작하는것 안됨
+        let engScore = 80;
+        let mathScore = 75;
+
+        // 성적의 합계와 평균 구하기 : 바로 출력
+        document.write("<바로 출력><br>");
+        document.write("합계: " , engScore+mathScore + "<br>");
+        document.write("평균: " , (engScore+mathScore)/2+ "<br><br>");
+
+        // 성적의 합계와 평균 구하기 : 변수 사용
+        let sum = engScore+mathScore;
+        let avg = sum/2;
+        document.write("<변수 사용><br>");
+        document.write("합계: " + sum + "<br>");
+        document.write("평균: " + avg + "<br>");
+        
+        //jeans 예제
+        document.write("<br>===================================<br>");
+        
+
+
+        // var변수는 변수선언을 중복사용해도 알려주지 않는다. 
+        //          ->>> var대신 let사용하기.
+        // var num1 = 10;
+        // var num1 = 12;
+
+        // let변수는 중복사용시 알려준다.
+        let num1 = 10;
+        let result1 = num1++;
+        // 후치연산시 result1에 num1(11)값을 넣으려면 추가해야 하는 코드
+        // result1 = num1;
+        // 혹은 let result1 = ++num1; 코드를 사용.
+
+        document.write("result1 : " + result1 + "<br>");
+        document.write("num1 : " + num1 + "<br>");
+
+        
+        
+
+    </script>
+</body>
+</html>

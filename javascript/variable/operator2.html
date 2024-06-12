@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교, 논리 연산자</title>
+</head>
+<body>
+    <script>
+        let num1 = 8, num2 = 5;
+        // document.write(num1, num2);
+
+        // 비교 연산. <, >, <=, >=, ==, !=
+        // 결과값 : true, false
+        let s1 = "김", s2 = "감";
+        console.log(num1 > num2);
+        console.log(num1 == num2);
+        console.log(num1 === num2);
+        console.log(s1 == s2);
+        console.log(s1 === s2);
+
+        console.log("<br>");
+
+        // 논리 연산 - 비교연산 2개 이상
+        // 논리곱(그리고, and, &&) : 두 조건이 모두 참일때만 true.
+        // 논리합(또는, or, ||) : 둘 중 하나만 참이어도 true.
+        // 논리부정 (!)
+
+        // 조건 연산자 - 비교문 ? 참(true) : 거짓(false)
+        // 변수 선언하고 -> 처리문
+        let result;
+        result = (10 > 11) ? "참입니다." : "거짓입니다.";
+        document.write(result);
+        document.write("<br>");
+        
+        result = (10 > 11) ? true : false;
+        document.write(result);
+
+    </script>
+</body>
+</html>

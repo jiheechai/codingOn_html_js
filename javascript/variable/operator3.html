@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복합연산자 예제</title>
+</head>
+<body>
+    <h2>연산자 예제</h2>
+    <script>
+        // '+' : 숫자의 경우 산술연산자, 문자나 변수의 경우 연결연산자
+        // 복합 대입 연산자
+        let val = 100;
+        // val += 4;
+        val *= 4;
+        document.write(val);
+        document.write("<br><br>");
+
+        // Number() : 문자를 숫자로 변환하는 함수
+        let n1 = "100";
+        let n2 = "8";
+        n1 = Number(n1);
+        n2 = Number(n2);
+        // 몫을 구할때는 정수형으로 구해야 함 ->>> parseInt()사용
+        document.write("몫 : " + parseInt(n1/n2));
+        document.write("<br>");
+        document.write("나머지 : " + n1*n2);
+    </script>
+</body>
+</html>
