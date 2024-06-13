@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 제어(true, break 사용, continue)</title>
+</head>
+<body>
+    <script>
+        //break
+        let i = 0;
+        let sum = 0;
+
+        while(true){
+            i++;
+            sum += i;
+            document.write("i값 : " + i + ", sum값 : " + sum + "<br>");
+            if(i == 10) {
+                break;
+            }
+
+        }
+
+
+        // continue. 홀수의 합 구하기
+        // let sum = 0;
+        // for(let i = 0; i < 10; i++) {
+        //     if(i%2 == 0) {
+        //         // continue는 아래로 내려가지 않고 곧바로 위로 이동
+        //         continue;
+        //     }
+        //     sum += i;
+        //     document.write("i : " + i + ", sum : " + sum + "<br>");
+            
+        // }
+        // document.write(sum);
+    </script>
+</body>
+</html>

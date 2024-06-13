@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 예제 (while)</title>
+</head>
+<body>
+    <script>
+        // console.log("안녕하세요");
+
+        // 인사
+        // let index = 0;
+        // while(index < 300) {
+        //     document.write(++index + "번째 인사 드립니다.♬<br>");
+        // }
+        // document.write("<br>끝.<br>");
+
+        // *찍기. 혼자 궁금해서 해본 실습.
+        // let index = 0;
+        // let i = "♬";
+        // while (index < 30) {
+        //     document.write(i + "<br>");
+        //     index++;
+        //     i = i + "♬";
+        // }
+
+        // 간단 계산값 로그찍기.
+        // let sumVal = 0;
+        // sumVal = sumVal + 1;
+        // console.log(sumVal);
+        // sumVal = sumVal + 2;
+        // console.log(sumVal);
+        // sumVal = sumVal + 3;
+        // console.log(sumVal);
+
+
+        // 1~10 합계 구하기
+        let i = 0;
+        let sum = 0;
+
+        while (i <= 10) {
+            document.write("sum : " + sum + ", i : " + i + "<br>");
+            sum += i;
+            i++;
+        }
+
+        document.write("<br>sum : " + sum + ", i : " + i + "<br>");
+        document.write("<br>합 : " + sum);
+    </script>
+</body>
+</html>

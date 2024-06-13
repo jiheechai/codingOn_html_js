@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 예제</title>
+</head>
+<body>
+    <script>
+        // 영화 나이 관람가
+        // 나이가 15세 이상이면 관람가, 아니면 관람불가
+        let age = prompt("당신의 나이를 입력하세요 : ");
+
+        if(age >= 15) { //age >= 15 : Boolean. 참(1)/거짓(0)
+            document.write("관람 가능합니다.^^<br>");
+        } else {
+            document.write("XXX관람 불가능!!XXX<br>");
+        }
+
+        console.log(typeof(age >= 15));
+    </script>
+</body>
+</html>

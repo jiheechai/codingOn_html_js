@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열 함수
+        let numbers = [1, 2, 3];
+        //데이터 추가저장(add)
+        // 인덱스로 추가
+        numbers[1] = 4;
+
+        // 함수로 추가
+        numbers.push(5);
+        document.write(numbers + "<br>");
+
+        // 데이터 삭제
+        numbers.pop();
+        document.write(numbers + "<br>");
+
+        //데이터 전체 조회
+        for(let i = 0; i < numbers.length; i++){
+            document.write(numbers[i] + " ");
+            // i = 0, numbers[0] = 1
+            // i = 1, numbers[1] = 4
+            // i = 2, numbers[2] = 3
+        }
+    </script>
+</body>
+</html>

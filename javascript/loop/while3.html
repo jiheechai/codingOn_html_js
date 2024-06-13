@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            'y' - "계속 반복"
+            'n' - "반복 중단"
+            그 외의 키 - "키를 잘못 눌렀습니다."
+        */
+
+        // while(true) {
+        //     let key = prompt("계속 반복할까요?", "y(Y)/n(N)");
+        //     if(key === 'y' || key === 'Y'){
+        //         alert("계속 반복");
+        //     } else if(key === 'n' || key === 'N') {
+        //         alert("중단합니다.");
+        //         break;
+        //     } else {
+        //         alert("키를 잘못 눌렀습니다. 다시 입력해주세요.");
+        //     }
+        // }
+        // document.write("프로그램 종료!!!");
+
+
+        //for문
+        let sum = 0;
+        for (let i = 0; i < 10; i++) {
+            document.write((i+1) + "번째 출력입니다.<br>");
+            sum += i;
+            console.log(i, sum);
+        }
+        document.write("i의 총 합 : " + sum);
+
+    </script>
+</body>
+</html>

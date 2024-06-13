@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학점 계산</title>
+</head>
+<body>
+    <script>
+        let score = Number(prompt("점수를 입력하세요 : "));
+        let grade = "";
+
+        console.log(typeof(score));
+
+        if(score >= 90 && score <= 100) {
+            //  90 ~ 100점 : A
+            grade = "A";
+        } else if(score >= 80 && score < 90) {
+            //  80 ~ 89점 : B
+            grade = "B";
+        } else if(score >= 70 && score < 80) {
+            //  70 ~ 79점 : C
+            grade = "C";
+        } else if(score >= 60 && score < 70) {
+            //  60 ~ 69점 : D
+            grade = "D";
+        } else if(score >= 0 && score < 60) {
+            // 0 ~ 59점 : F
+            grade = "F";
+        } else {
+            // 오류처리
+            // 입력한 점수가 0미만, 100 초과일때. 즉, 오류일때.
+            // grade를 그대로 ""(null)값으로 둔다.
+            grade = "";
+        }
+
+
+        if (grade === "") {
+            //  isNAN(grade) : grade입력값이 숫자가 아니면
+            document.write("잘못 입력했습니다!! 점수를 다시 입력해주세요.<br>");
+        } else {
+            document.write("점수가 " + score + "점인 당신의 학점은 " + grade + "입니다.<br>");
+        }
+        
+    </script>
+</body>
+</html>
