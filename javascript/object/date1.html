@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체 Date() 사용</title>
+</head>
+<body>
+    <h2>날짜객체 Date() 사용하기.</h2>
+    <script>
+        let now = new Date();
+        // 날짜
+        document.write("현재 년도: " + now.getFullYear() + "<br>");
+        document.write("현재 월: " + (now.getMonth()+1) + "<br>");
+        document.write("현재 일: " + now.getDate() + "<br>");
+        document.write("현재 요일: " + now.getDay() + "<br>");
+
+        // 시간
+        document.write("현재 시: " + now.getHours() + "<br>");
+        document.write("현재 분: " + now.getMinutes() + "<br>");
+        document.write("현재 초: " + now.getSeconds() + "<br>");
+        // 밀리초로 출력(1970. 1. 1 자정) 1000으로 나눔
+        document.write("현재까지의 시간: " + now.getTime()/1000 + "<br>");
+    </script>
+</body>
+</html>

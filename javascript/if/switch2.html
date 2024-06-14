@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문 예제2</title>
+</head>
+<body>
+    <script>
+        // case의 값이 동일할때는 break를 사용하지 않음.
+        let food = "토마토";
+        switch(food) {
+            case "바나나" :
+            case "수박" :
+                document.write("과일입니다.<br>");
+                break;
+            case "양파" :
+                document.write("야채입니다.<br>");
+                break;
+            default :
+                document.write("과일도 야채도 아닙니다.<br>");
+                break;
+        }
+    </script>
+</body>
+</html>

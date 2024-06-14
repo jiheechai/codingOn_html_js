@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 최댓값, 최솟값</title>
+</head>
+<body>
+    <h2>배열의 최댓값, 최솟값</h2>
+    <script>
+        let scores = [70, 80, 90, 65, 77, 44];
+        let maxVal = scores[0];
+        let maxIndex = 0;
+        let minVal = scores[0];
+        let minIndex = 0;
+
+        // 배열의 최댓값 구하기
+        for(let i = 1; i < scores.length; i++) {
+            if(maxVal < scores[i]) {
+                maxVal = scores[i];
+                maxIndex = i;
+                console.log(maxVal);
+            }
+        }
+        // 
+        //     i = 1 ) maxVal = 70 < scores[1] = 80     -->maxVal = 80
+        //     i = 2 ) maxVal = 80 < scores[2] = 90     -->maxVal = 90
+        //     i = 3 ) maxVal = 90 > scores[3] = 65
+        //     i = 4 ) maxVal = 90 > scores[4] = 77
+        //     i = 5 ) maxVal = 90 > scores[5] = 44
+        // 
+        document.write("배열의 최댓값 : " + maxVal + "<br>");
+        document.write("배열의 최댓값의 인덱스 위치 : " + maxIndex + "<br><br>");
+
+
+        // 배열의 최솟값 구하기
+        for(let i = 1; i < scores.length; i++) {
+            if(minVal > scores[i]) {
+                minVal = scores[i];
+                minIndex = i;
+                console.log(minVal);
+            }
+        }
+        document.write("배열의 최솟값 : " + minVal + "<br>");
+        document.write("배열의 최솟값의 인덱스 위치 : " + minIndex + "<br>");
+    </script>
+</body>
+</html>

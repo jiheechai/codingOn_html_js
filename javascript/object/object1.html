@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 예제</title>
+</head>
+<body>
+    <script>
+        /*
+            객체(object) - 여러가지 자료형을 포함하는 '복합' 자료형이다.
+                            객체는 속성과 메서드로 구성됨
+                            key:value
+                            json(javascript object notation) 자료의 형태
+
+            let 객체이름 = {
+                속성이름 : 값,
+                속성이름 : 값,
+                속성이름 : function(){...}
+            }
+        */
+
+
+        // person 객체 만들기
+        let person = {
+            name : "이강인", 
+            age : 23,
+            isMerried : false,
+
+            play: function(){
+                alert("골을 넣는다!!");
+            }
+        }
+        // 사용 - 객체이름.속성
+        // console.log("이름 : " + person.name);
+        // console.log("나이 : " + person.age);
+        // console.log("결혼여부 : " + person.isMerried);
+        // person.play();
+
+
+        // book 객체 만들기
+        let book = {
+            title: "웹 표준의 정석",
+            author: "고경희",
+            page: 600,
+            price: 30000,
+
+            // this.title === book.title
+            info: function(){
+                alert(this.title + " 책의 분량은 총 " + this.page + "페이지 입니다.");
+            }
+
+        }
+        document.write(book.title);
+        document.write(book.price);
+        document.write(book.author);
+        document.write(book.page);
+        book.info();
+
+    </script>
+</body>
+</html>
