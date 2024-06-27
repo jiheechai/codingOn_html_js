@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그의 속성 제어</title>
+    <style>
+        .pic{width: 600px; margin:0 auto;}
+        .small{width: 100px; height: 66px;}
+    </style>
+</head>
+
+<body>
+    <div class="pic">
+        <h2>태그의 속성 설정하기</h2>
+        <img src="images/tangerine.jpg" alt="감귤" class="big">
+        <div id="smallPic">
+            <img src="images/tangerine.jpg" alt="감귤" class="small">
+            <img src="images/blueberry.jpg" alt="블루베리" class="small">
+            <img src="images/peach.jpg" alt="복숭아" class="small">
+        </div> 
+    </div>
+
+    <script>
+        let bigPic = document.querySelector(".big");
+        let smallPics = document.querySelectorAll(".small");
+        console.log(smallPics.length);
+
+        // 큰 이미지 보기 함수
+        function showBig(){
+            bigPic.setAttribute("src", this.src);
+            console.log(this.src);
+        }
+
+        // 호출
+        for(let i = 0; i < smallPics.length; i++){
+            smallPics[i].onclick = showBig;
+        }
+        
+    </script>
+</body>
+</html>

@@ -21,6 +21,23 @@
         document.write("현재 초: " + now.getSeconds() + "<br>");
         // 밀리초로 출력(1970. 1. 1 자정) 1000으로 나눔
         document.write("현재까지의 시간: " + now.getTime()/1000 + "<br>");
+
+        // 일로 환산
+        let day = Math.round(now.getTime()/(1000*24*60*60));
+        document.write("현재까지의 시간: " +  day + "일<br>");
+
+        // 지나온 시간 계산하기
+        let today = new Date();
+        console.log(today);
+        let theDay = new Date("2024-05-29");
+        console.log(theDay);
+
+        // 
+        let passed_time = today.getTime() - theDay.getTime();
+        // console.log(passed_time/(1000*60*60*24));
+        passed_time = Math.round(passed_time/(1000*24*60*60))
+        document.write(`개강후 현재까지 ${passed_time}일 지났습니다.`);
+
     </script>
 </body>
 </html>

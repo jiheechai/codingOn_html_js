@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 예제</title>
+    <!-- 라이브러리 CDN 가져오기 -->
+    <!-- 내가 실행할때만 서버에 가서 가져온다. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        // 자바스크립트 방식(실행)
+        // 윈도우가 실행될때 데이터가 로드됨
+        // text(문자) - innerText (태그를 쓸 수 없음)
+        // html(태그, 문자) - innerHTML
+        // window.onload = function(){
+        //     document.getElementById('show').innerHTML = "안녕~";
+        // }
+
+
+        // 제이쿼리 방식(실행)
+        $(document).ready(function(){
+            // 선택자(태그, id, class) - $(선택자)안에 기입
+            // 체이닝 방식(연결 사슬)
+            $('#show').html("<h3>안녕~</h3>")
+                        // .css("color", "red");
+                        .css({color: "blue", fontSize: "30px"})
+        });
+
+    </script>
+</head>
+<body>
+    <p id="show"></p>
+</body>
+</html>

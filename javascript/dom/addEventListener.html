@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener() 함수 예제</title>
+</head>
+<body>
+    <!-- 이벤트가 2가지 이상일때 사용하는 함수 -->
+        <!-- 이벤트1. 마우스를 올리면(mouseover) 블루베리 이미지가 나타난다. -->
+        <!-- 이벤트2. 마우스를 떼면(mouseout) 복숭아 이미지가 나타난다. -->
+    <div id="content">
+        <img src="images/peach.jpg" alt="복숭아" id="fruit" onmouseout="" > 
+        <!-- 위 태그 안에 onmouseout=""으로도 동작이 가능하다. -->
+    </div>
+
+    <script>
+        let fruitImg = document.querySelector("#fruit");
+
+        // 방법1. 함수를 정의 후 호출
+        // function changePic(){
+        //     fruitImg.src = "images/blueberry.jpg"
+        // }
+        // function originPic(){
+        //     fruitImg.src = "images/peach.jpg"
+        // }
+
+        // // on접두사 생략, 두번째 인자에 함수 
+        // fruitImg.addEventListener('mouseover', changePic);
+        // fruitImg.addEventListener('mouseout', originPic);
+
+
+        // 방법2. 함수 정의하지 않고 바로 호출. 익명함수
+        // fruitImg.addEventListener('mouseover', function(){
+        //     fruitImg.src = "images/blueberry.jpg"
+        // });
+        // fruitImg.addEventListener('mouseout', function(){
+        //     fruitImg.src= "images/peach.jpg"
+        // });
+
+    </script>
+</body>
+</html>

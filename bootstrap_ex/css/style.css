@@ -1,0 +1,28 @@
+h4 {
+    color: red;
+    /* rem : html기준. / em : 부모 기준. */
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px){
+    html{
+        font-size: 14px;
+    }
+
+    .col-4{
+        /* 사진이 두개씩 나오게 */
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    html{
+        font-size: 12px;
+    }
+    .col-4{
+        /* 사진이 두개씩 나오게 */
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}

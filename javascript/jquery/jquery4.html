@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- jquery cdn사이트에서 3.x버전 중에 (uncompressed / minified) copy&paste -->
+    <script>
+        // onload 환경
+        $(function(){
+            // $('#name').css('background-color', 'lightgreen');
+            $('#name').css({backgroundColor: 'lightgreen', fontSize: '20px'});
+            // append() - 선택한 요소의 자식요소 끝에 추가된다.
+            $('.info').append('<p>만나서 반가워요~</p>')
+            $('.pic').html('<img src="images/blueberry.jpg" alt="블루베리">')
+            // $('.pic img').css({borderRadius: "20px"});
+            $('.pic img').css('border-radius', '20px');
+
+        })
+
+        // jquery : 카멜표기법({borderRadius:""})
+        // css방식은 방식(따옴표) : - 방식 ('border-radius', '')
+
+
+    </script>
+</head>
+<body> 
+    <h2>방문을 환영합니다.</h2>
+    <div class="info">
+        <p id="name">내 이름은 채지희입니다.</p>
+        <p>나는 서울에 살아요.</p>
+    </div>
+    <div class="pic"></div>
+</body>
+</html>

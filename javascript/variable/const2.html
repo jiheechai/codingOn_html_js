@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공의 속도(구속) 변환 프로그램</title>
+</head>
+<body>
+    <h3>공의 속도(구속) 변환 프로그램</h3>
+    <p>공의 속도 km를 mile로 변환하는 프로그램입니다.</p>
+    <script>
+        const RATE_KPH_MPH = 1.609; //km = mile*1.609변환 상수
+        let mph, kph;
+
+        kph = prompt("구속(공의 속도)를 입력하세요:");
+        console.log(typeof(kph));
+        kph = Number(kph);      //string -> number로 변환
+        // kph = parseFloat(kph);      //string -> float(실수)로 변환
+
+        // 계산 : mph = kph/변환상수
+        mph = kph / RATE_KPH_MPH;
+
+        // toFixed(2) : 소수점 아래 두자리수까지 출력
+        document.write(`${kph}km는 ${mph.toFixed(2)}mile입니다.`);
+    </script>
+</body>
+</html>

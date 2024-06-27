@@ -16,46 +16,61 @@
             }
         */
 
-        //1. 단독 if문
-        document.write("==속도 50 이상이면 속도위반. 아니면 준수==<br>");
-        let limitedSpeed = 45;
-        // document.write("제한속도 : " + limitedSpeed);
-        // document.write("<br>");
+        // //1. 단독 if문
+        // document.write("==속도 50 이상이면 속도위반. 아니면 준수==<br>");
+        // let limitedSpeed = 45;
+        // // document.write("제한속도 : " + limitedSpeed);
+        // // document.write("<br>");
 
-        if(limitedSpeed >= 50){
-            document.write("제한속도 위반입니다!!!<br>");
-        }
-        else {
-            document.write("제한속도 준수했습니다. 고맙습니다.<br>");
-        }
-        document.write("현재속도는 " + limitedSpeed + "km 입니다.<br>");
-        document.write("===============================================<br><br>");
+        // if(limitedSpeed >= 50){
+        //     document.write("제한속도 위반입니다!!!<br>");
+        // }
+        // else {
+        //     document.write("제한속도 준수했습니다. 고맙습니다.<br>");
+        // }
+        // document.write("현재속도는 " + limitedSpeed + "km 입니다.<br>");
+        // document.write("===============================================<br><br>");
 
 
-        //2. 점수가 60이상이면 합격, 아니면 불합격.
-        document.write("==점수가 60이상이면 합격, 아니면 불합격.==<br>");
-        let score = 60;
+        // //2. 점수가 60이상이면 합격, 아니면 불합격.
+        // document.write("==점수가 60이상이면 합격, 아니면 불합격.==<br>");
+        // let score = 60;
 
-        if(score >= 60) {
-            document.write("합격<br>");
-        } else {
-            document.write("불합격<br>")
-        }
-        document.write("당신의 점수는 " + score + "점 입니다.<br>");
-        document.write("===============================================<br><br>");
+        // if(score >= 60) {
+        //     document.write("합격<br>");
+        // } else {
+        //     document.write("불합격<br>")
+        // }
+        // document.write("당신의 점수는 " + score + "점 입니다.<br>");
+        // document.write("===============================================<br><br>");
 
 
         //3. 어떤 수가 짝수인지 홀수인지 판별하는 프로그램
-        document.write("==어떤 수가 짝수인지 홀수인지 판별하는 프로그램==<br>");
-        let num = prompt("숫자를 입력하세요.", "1");
-        num = Number(num);
-        if(num % 2 === 0) {
-            document.write("짝수입니다.<br>");
-        } else {
-            document.write("홀수입니다.<br>");
-        }
-        document.write("입력된 수는 " + num + " 입니다.<br>");
-        document.write("===============================================<br><br>");
+        //      취소 버튼, 문자를 입력, 음수 입력시 ->>> 취소처리
+        // document.write("==어떤 수가 짝수인지 홀수인지 판별하는 프로그램==<br>");
+        // let num = prompt("숫자를 입력하세요.", "1");
+        // if(num !== null && !isNaN(num) && num >= 0) {
+        //     num = Number(num);      //문자를 숫자로 형변환
+        //     if(num % 2 == 0){
+        //         document.write("짝수입니다.<br>");
+        //     } else {
+        //         document.write("홀수입니다.<br>");
+        //     }
+        //     // document.write("입력된 수는 ", num, "입니다.");
+        //     // document.write("<br>");
+        //     document.write(`입력된 수는 ${num}입니다.`);
+        // } else {
+        //     document.write("입력이 취소되었습니다.");
+        // }
+
+        // num = Number(num);
+        // if(num % 2 === 0) {
+        //     document.write("짝수입니다.<br>");
+        // } else {
+        //     document.write("홀수입니다.<br>");
+        // }
+        // document.write("입력된 수는 " + num + " 입니다.<br>");
+        // document.write("===============================================<br><br>");
 
         
     </script>

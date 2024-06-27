@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 자바스크립트의 객체의 속성인 onclick 이용해서 이벤트 실행 -->
+    <div id="content">
+        <img src="images/peach.jpg" alt="복숭아" id="fruit">
+    </div>
+
+    <script>
+        let fruitImg = document.querySelector("#fruit");
+        
+        function changePic(){
+            fruitImg.src = "images/blueberry.jpg";
+        }
+        
+        fruitImg.onclick = changePic;   
+        // ()괄호를 쓰는 경우는 여러번 동작하는 경우.
+        // 이벤트상에서는 한번만 호출하기 때문에 changePic에 괄호를 쓰지 않음
+        // 자바스크립트내에서만 괄호를 쓰지 않아야 동작함.
+    </script>
+</body>
+</html>

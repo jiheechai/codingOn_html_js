@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList 예제</title>
+    <style>
+        .active{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h3>classList로 클래스 스타일 적용하기</h3>
+    <button onclick="addClass()">add</button>
+    <button onclick="removeClass()">remove</button>
+    <button onclick="toggleClass()">toggle</button>
+    <div id="myDIV">
+        <p>안녕하세요</p>
+    </div>
+
+    <script>
+        function addClass(){
+            // active 클래스 추가하기
+            // document.getElementById("myDIV").classList.add("active");
+            let list = document.getElementById("myDIV").classList;
+            list.add("active");
+        }
+        function removeClass(){
+            // active 클래스 삭제하기
+            document.getElementById("myDIV").classList.remove("active");
+        }
+        function toggleClass(){
+            // 버튼 하나로 add, remove 두가지 동작 교대로. toggle
+            document.getElementById("myDIV").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
