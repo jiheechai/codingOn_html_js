@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습3. Promise로 배경색 변경하기</title>
+</head>
+<body>
+    <script>
+            //콜백지옥
+            // setTimeout(() => {
+            //     document.body.style.backgroundColor = 'red';
+            //     setTimeout(() => {
+            //         document.body.style.backgroundColor = 'orange';
+            //         setTimeout(() => {
+            //             document.body.style.backgroundColor = 'yellow';
+            //             setTimeout(() => {
+            //                 document.body.style.backgroundColor = 'green';
+            //                 setTimeout(() => {
+            //                     document.body.style.backgroundColor = 'blue';
+            //                     setTimeout(() => {
+            //                         document.body.style.backgroundColor = 'navy';
+            //                         setTimeout(() => {
+            //                             document.body.style.backgroundColor = 'purple';
+            //                         }, 2000);
+            //                     }, 2000);
+            //                 }, 2000);
+            //             }, 2000);
+            //         }, 2000);
+            //     }, 2000);
+            // }, 2000);
+
+
+
+
+            //promise사용해 함수정의
+            function promiseFunc(color){
+                return new Promise((resolve, reject)=>{
+                    setTimeout(()=>{
+                        document.body.style.backgroundColor = color;
+                        resolve();
+                    }, 1000);   
+                });
+            }
+            
+            //호출. then 체이닝
+            // promiseFunc('red').then(function(){
+            //     return promiseFunc('orange');
+            // })
+            // .then(function(){
+            //     return promiseFunc('yellow');
+            // })
+            // .then(function(){
+            //     return promiseFunc('green');
+            // })
+            // .then(function(){
+            //     return promiseFunc('blue');
+            // })
+            // .then(function(){
+            //     return promiseFunc('navy');
+            // })
+            // .then(function(){
+            //     return promiseFunc('purple');
+            // })
+
+
+            // 호출 : async await 방식으로 사용
+            async function exec(){
+                await promiseFunc("red");
+                await promiseFunc("orange");
+                await promiseFunc("yellow");
+                await promiseFunc("green");
+                await promiseFunc("blue");
+                await promiseFunc("navy");
+                await promiseFunc("purple");
+            }
+            exec();
+    </script>
+</body>
+</html>

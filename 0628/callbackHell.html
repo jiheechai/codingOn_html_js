@@ -8,7 +8,28 @@
 <body>
     <script>
         // 콜백지옥 -> 리더님 코드 복붙해오기
-        // setTimeout((), 2000);
+          
+        setTimeout(() => {
+            document.body.style.backgroundColor = 'red';
+            setTimeout(() => {
+                document.body.style.backgroundColor = 'orange';
+                setTimeout(() => {
+                    document.body.style.backgroundColor = 'yellow';
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'green';
+                        setTimeout(() => {
+                            document.body.style.backgroundColor = 'blue';
+                            setTimeout(() => {
+                                document.body.style.backgroundColor = 'navy';
+                                setTimeout(() => {
+                                    document.body.style.backgroundColor = 'purple';
+                                }, 2000);
+                            }, 2000);
+                        }, 2000);
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        }, 2000);
     </script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //(4+3) * 2 - 1 = 13
+
+        // //콜백
+        // function add(num1, num2, callback) {
+        //     setTimeout(() => {
+        //         const result = num1+num2;
+        //         callback(result);
+        //     }, 1000);
+        // }
+        // function mul(num, callback) {
+        //     setTimeout(() => {
+        //         const result = num * 2;
+        //         callback(result);
+        //     }, 700);
+        // }
+        // function sub(num, callback) {
+        //     setTimeout(()=> {
+        //         const result = num - 1;
+        //         callback(result);
+        //     }, 500);
+        // }
+
+        // //실행
+        // add(4, 3, function(x){
+        //     console.log("1: ", x); //7
+        //     mul(x, function(y){
+        //         console.log("2: ", y); //14
+        //         sub(y, function(z){
+        //             console.log("3: ", z); //13
+        //         });
+        //     });
+        // });
+
+
+
+        //promise
+        function add(num1, num2){
+            return new Promise((resolve, reject) => {
+                setTimeout(()=> {
+                    const result = num1 + num2;
+                    resolve(result);
+                }, 1000);
+            });
+            // const result = num1+num2;
+        }
+        function mul(num){
+            return new Promise((resolve, reject) => {
+                setTimeout(()=> {
+                    const result = num * 2;
+                    resolve(result);
+                }, 700);
+            });
+        }
+        function sub(num){
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    const result = num - 1;
+                    resolve(result);
+                }, 500);
+            });
+        }
+
+        //실행
+        add(4, 3).then(function(resAdd){
+            console.log('add: ', resAdd);
+            return mul(resAdd); //add 다음으로 이어질 함수
+        })
+        .then(function(resMul){
+            console.log('mul: ', resMul);
+            return sub(resMul); //mul 다음으로 이어질 함수
+        })
+        .then(function(resSub){
+            console.log('sub: ', resSub);
+        });
+    </script>
+</body>
+</html>
