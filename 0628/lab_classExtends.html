@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습2. 클래스 상속(선택)</title>
+</head>
+<body>
+    <script>
+        class Shape{
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+            
+            getArea() {
+                return this.width * this.height;
+            }
+        }
+
+        // let rec1 = new Shape(3, 4);
+        // console.log(rec1.getArea());
+
+        class Rectangle extends Shape{
+            getDialog(width, height) {
+                this.width = width;
+                this.height = height;
+                return Math.sqrt(this.width*this.width + this.height*this.height);
+            }
+        }
+
+        class Triangle extends Shape {
+            getArea() {
+                return this.width*this.height/2;
+            }
+        }
+
+        class Circle extends Shape {
+            constructor(width, height, radius) {
+                super(width, height);
+                this.radius = radius;
+            }
+
+            getArea() {
+                let result = 3.14 * this.radius * this.radius;
+                return result;
+            }
+        }
+
+        // 사각형의 넓이 : 4*5 = 20
+        let rec = new Rectangle(4, 5);
+        console.log(rec.getArea());
+
+        // 삼각형의 넓이 : 4*5/2 = 10
+        let tri = new Triangle(4, 5);
+        console.log(tri.getArea());
+
+        // 원의 넓이 : 3.14*4*4 = 50.24
+        let cir = new Circle(4, 5, 4);
+        console.log(cir.getArea());
+
+
+    </script>
+</body>
+</html>

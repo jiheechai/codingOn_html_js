@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...spread 전개 연산자</title>
+</head>
+
+<body>
+    <script>
+        // spread 연산자
+        // 배열 합치기
+        const a = [1, 2, 3];
+        const b = [4, 5];
+
+        console.log(a);
+        console.log(...a);
+
+        // 기존 함수 방식 concat
+        const concat = a.concat(b);
+        console.log('concat', concat);
+
+        // ...연산자
+        const spread = [...a, ...b];
+        console.log('spread', spread);
+
+        const obj = {
+            name : '홍길동',
+            age: 19,
+        };
+        console.log(obj);
+        console.log('spread', {...obj}); 
+        // {...obj} : 얕은복사(동일속성, 새로운 객체, 기존 obj에는 영향이 없음.)
+        // 새로운 객체obj를 하나 더 만든것.
+        // 예시
+        const newObj = {...obj};
+        newObj.age = 29;
+        console.log('newObj', newObj);
+        console.log('obj', obj);
+        obj.age = 31;
+        console.log('newObj', newObj);
+        console.log('obj', obj);
+        // 복사본을 만들면 원래 객체를 안전하게 유지하면서도 필요한 변경을 할 수 있음.
+
+
+        const str = "hello";
+        console.log(str);
+        console.log([...str]);
+
+        // rest 파라미터
+        function get(a, b, c) {
+            console.log(a, b, c);
+        }
+        const arr = [10, 20, 30, 40, 50, 60];
+        get(arr);
+
+
+        //test
+        // const objs = {
+        //     name : 'banana',
+        //     color : 'yellow',
+        // };
+
+        // //얕은 복사
+        // const newObjs = {...objs}; //newObj = obj를 하면 obj와 newObj가 같아짐.
+        // newObjs.name = 'apple';
+        // newObjs.color = 'red';
+        // console.log('obj', objs);
+        // console.log('newObj', newObjs);
+        
+    </script>
+</body>
+</html>

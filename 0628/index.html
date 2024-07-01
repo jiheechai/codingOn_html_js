@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 구조 분해 할당</title>
+</head>
+<body>
+    <script>
+        // 배열 구조 분해 할당
+        // 배열 -> 배열에서는 const를 써도 값 변경 가능.
+        const lists = ['apple', 'grape', function () {}];
+        // 기존 방식
+        console.log(lists[0], lists[1], lists[2]);
+
+        // 배열 구조 분해 할당.(순서가 매우 중요) -> item1 : 배열이 아닌 변수
+        let [item1, item2, item3, item4 = 'peach'] = lists;
+        // let item1 = "apple" 이라고 생각하면 됨
+
+        console.log('item1: ', item1, 'item2:', item2, 'item3:', item3);
+        console.log('item4:', item4);
+
+        
+
+
+        // 교환 -> 리더님 코드 복사해오기
+
+
+        // 객체 구조분해 할당
+        // 객체
+        // const obj = {
+        //     name: '홍길동',
+        //     age: 19,
+        //     gender: 'M',
+        //     friends: ['이몽룡', '성춘향'],
+        //     hello: function(){
+        //         console.log('안녕하세요');
+        //     },
+        //     'k-13':'13기',
+        //     city: '부산',
+        // };
+        // console.log(obj.name, obj.gender);
+        // obj.age = 29;
+        // console.log(obj.friends[0]);
+        // console.log(obj['name']);
+        // console.log(obj['k-13']); //대괄호표기법: 동적접근, 특수문자, 띄어쓰기일때 사용
+        // console.log(obj);
+
+        // // 객체 구조 분해 할당
+        // // key:value 형태에서 key값이 매우 중요. (순서는 필요없음.)
+        // const { gender, age, name, city='서울' } = obj;
+        // const { name: newName } = obj;  //객체가 여러개이고 이름이 동일한 변수가 있을 때, :로 변수 이름 변경
+        // console.log(gender, age);
+        // console.log(newName);
+        // console.log(city);
+
+        // const fruit = ['tomato', 'banana', 'apple'];
+        // let [items1, items2, items3] = fruit;
+
+        // //결과 확인
+        // console.log('item1: ', items1, 'item2:', items2, 'item3:', items3);
+        const obj = {
+            name : 'banana',
+            color : 'yellow',
+            num : 2,
+            hello: function() { console.log('hello, I am banana!!');},
+
+        };
+
+        //객체 구조 분해 할당 : key를 똑같이 하는것이 매우 중요. 순서는 중요x
+        const {color, name, num} = obj;
+        console.log(color, num, name); //yellow, 2, banana
+
+        //변수 이름 변경 가능
+        const { name: newName } = obj;
+        console.log(newName); //banana
+                
+    </script>
+</body>
+</html>
