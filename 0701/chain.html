@@ -69,18 +69,31 @@
             });
         }
 
-        //실행
-        add(4, 3).then(function(resAdd){
+        // //실행
+        // add(4, 3).then(function(resAdd){
+        //     console.log('add: ', resAdd);
+        //     return mul(resAdd); //add 다음으로 이어질 함수
+        // })
+        // .then(function(resMul){
+        //     console.log('mul: ', resMul);
+        //     return sub(resMul); //mul 다음으로 이어질 함수
+        // })
+        // .then(function(resSub){
+        //     console.log('sub: ', resSub);
+        // });
+
+        async function exec(){
+            const resAdd = await add(4, 3);
             console.log('add: ', resAdd);
-            return mul(resAdd); //add 다음으로 이어질 함수
-        })
-        .then(function(resMul){
+
+            const resMul = await mul(resAdd);
             console.log('mul: ', resMul);
-            return sub(resMul); //mul 다음으로 이어질 함수
-        })
-        .then(function(resSub){
+
+            const resSub = await sub(resMul);
             console.log('sub: ', resSub);
-        });
+  
+        }
+        exec();
     </script>
 </body>
 </html>
