@@ -2,10 +2,15 @@
 const a = 10;
 const b = 20;
 
-function connect() {
+// function connect() {
+//     return a + b;
+// }
+
+
+//test
+const connectt = function connect() {
     return a + b;
 }
-
 //여기가 변경
 //export 내보낼게 단 한개일때만 default를 쓴다.
-export default connect;
+export default connectt;
