@@ -22,9 +22,9 @@ app.get('/post', (req, res) => {
 //=======데이터 요청, 응답
 app.get('/resultGet', (req, res) => {
     console.log('요청값', req.query);
-    const abc = {
-        response: req.query,
-    };
+    // const abc = {
+    //     response: req.query,
+    // };
     res.json({ response: req.query });
 });
 const id = 'kdt13';
@@ -32,6 +32,9 @@ const pw = '1234';
 app.post('/resultPost', (req, res) => {
     console.log('요청값', req.body);
     const { id: reqId, pw: reqPw } = req.body;
+    console.log('reqId: ', reqId);
+    console.log('reqPw: ', reqPw);
+    console.log('=================');
     if (id === reqId && pw === reqPw) {
         res.json({ result: true, userId: id });
     } else {
