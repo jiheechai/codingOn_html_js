@@ -6,4 +6,12 @@ const allVisitor = async(req, res) => {
     console.log("controller: ", data);
 };
 
-module.exports = { allVisitor };
+//방명록 하나 조회
+const getVisitor = async(req, res) => {
+    console.log(req.params.id);
+    const data = await visitorModel.getVisitor(req.params.id);
+    console.log(data);
+    res.json({result:data});
+};
+
+module.exports = { allVisitor, getVisitor };

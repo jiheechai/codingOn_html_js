@@ -8,7 +8,4 @@ const router = express.Router();
 //get 방명록 전체 보이기
 router.get('/', controller.allVisitor);
 
-//get 방명록 하나 보이기
-router.get('/:id', controller.getVisitor);
-
 module.exports = router;
