@@ -9,13 +9,13 @@ router.post('/signup', controller.userSignup);
 //POST /login  로그인
 router.post('/login', controller.userLogin);
 // //GET /info 회원정보
-router.get('/info/:id', controller.userId); //controller 만드는것부터 해야함
+router.get('/info/:id', controller.userInfo); 
 // //PATCH /update 회원수정
-// router.patch('/update', controller.userUpdate);
+router.patch('/update', controller.userUpdate);
 // //DELETE /delete 회원삭제
-// router.delete('/delete', controller.userDelete);
+router.delete('/delete', controller.userDelete);
 
 // //GET /all 회원전체정보
-// router.get('/all', controller.userAll);
+router.get('/all', controller.userAll);
 
 module.exports = router;
