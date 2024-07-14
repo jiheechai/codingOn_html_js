@@ -1,10 +1,11 @@
 const express = require('express');
-const { main, pageVisitor } = require('../controller/page');
+const controller = require('../controller/page');
 const router = express.Router();
 
-//localhost:8000
-router.get('/', main);
-router.get('/visitor', pageVisitor);
-router.get('/visitor/:id', pageVisitor);
+// http://localhost:8080/
+router.get('/', controller.main);
+router.get('/login', controller.login);
+router.get('/profile/:id', controller.profile);
+router.get('/signup', controller.signup);
 
 module.exports = router;

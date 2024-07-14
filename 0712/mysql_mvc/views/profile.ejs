@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h3>회원정보</h3>
+    <form name="member-form">
+        <input type="text" id="userid" readonly /><br />
+        <input type="text" id="name" /><br />
+        <input type="password" id="pw" /><br />
+        <button type="button" onclick="updateFunc()">수정</button>
+        <button type="button" onclick="deleteFunc()">삭제</button>
+        <input type="hidden" id="id" />
+    </form>
+
+    <script>
+        //profile/?
+        console.log(document.location.pathname);
+        console.log(document.location.pathname.split('profile/'));
+        const [_, pathname] = document.location.pathname.split('profile/');
+        console.log(pathname);
+
+        //info controller로부터 정보 가져와서 폼에 넣기.
+        (async function() {
+            const result = await axios({
+                method : 'get',
+                url : `/api/user/info/${pathname}`
+            });
+            console.log(result);
+            const {userid, name, pw, id} = result.data.info[0];
+            document.querySelector("#userid").value = userid;
+            document.querySelector("#name").value = name;
+            document.querySelector("#pw").value = pw;
+            document.querySelector("#id").value = id;
+        })();
+
+        
+        function updateFunc() {
+            const form = document.forms['member-form'];
+            const data = {
+                name : form.name.value,
+                pw : form.pw.value,
+                id : Number(form.id.value)
+            };
+            console.log('data:::', data.id, data.pw, data.name);
+            axios({
+                method : 'patch',
+                url : '/api/user/update',
+                data
+            }).then((res) => {
+                console.log(res);
+                alert('회원정보가 수정되었습니다');
+                document.location.reload();
+            });
+        }
+
+        function deleteFunc() { 
+            if(!confirm('탈퇴하시겠습니까?')){
+                return ;
+            }
+            const data = {
+                id : Number(document.querySelector("#id").value)
+            }
+            axios({
+                method : 'delete',
+                url : "/api/user/delete",
+                data
+            }).then((res) => {
+                console.log(res);
+                alert("삭제되었습니다.");
+                document.location.href = '/';
+            })
+        }
+    </script>
+</body>
+</html>

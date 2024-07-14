@@ -51,10 +51,10 @@ const userInfo = async(id) => {
     return row;
 }
 
-const userUpdate = async(name, pw, userid) => {
+const userUpdate = async(name, pw, id) => {
     const conn = await getConn();
-    const query = 'UPDATE user_mvc SET name = ?, pw = ? WHERE userid = ?';
-    const [result] = await conn.query(query, [name, pw, userid]);
+    const query = 'UPDATE user_mvc SET name = ?, pw = ? WHERE id = ?';
+    const [result] = await conn.query(query, [name, pw, id]);
     console.log('model update :', result);
     await conn.end();
     return result;

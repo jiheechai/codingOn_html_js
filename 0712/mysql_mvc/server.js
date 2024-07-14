@@ -9,10 +9,13 @@ app.use(express.json());
 //라우터
 const pageRouter = require('./routes/page');
 app.use('/', pageRouter);
+const userRouter = require('./routes/user');
+app.use('/api/user', userRouter);
+
+const visitorPageRouter = require('./routes/visitorPage');
+app.use('/visit', visitorPageRouter);
 const visitorRouter = require('./routes/visitor');
 app.use('/api/visitor', visitorRouter);
-const  userRouter = require('./routes/user');
-app.use('/api/user', userRouter);
 
 //404
 app.use('*', (req, res) => {

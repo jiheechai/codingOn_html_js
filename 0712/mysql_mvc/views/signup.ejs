@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h3>회원가입</h3>
+    <form>
+        <label>userid : </label>
+        <input type="text" id="userid" /><br>
+        <label>이름 : </label>
+        <input type="text" id="name" /><br>
+        <label>비밀번호 : </label>
+        <input type="text" id="pw"/><br>
+        <button type="button" onclick="signupFunc()">회원가입</button>
+    </form>
+
+    <script>
+        function signupFunc() {
+            const data = {
+                userid : document.querySelector("#userid").value,
+                name : document.querySelector("#name").value,
+                pw : document.querySelector("#pw").value
+            }
+            axios({
+                method : "post",
+                url : "/api/user/signup",
+                data
+            }).then((res) => {
+                console.log("signup", res);
+                if(res.data.result) {
+                    alert(res.data.message);
+                    document.location.href = '/login';
+                } else {
+                    alert(res.data.message);
+                    document.location.reload();
+                }
+            });
+        }
+       
+    </script>
+</body>
+</html>

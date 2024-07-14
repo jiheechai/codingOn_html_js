@@ -19,7 +19,7 @@ const userLogin = async(req, res) => {
     const data = await userModel.userLogin(userid, pw);
 
     if(data.length > 0) {
-        res.json({result : true, message: "로그인 성공", id : data[0].userid});
+        res.json({result : true, message: "로그인 성공", id : data[0].id});
     }
     else {
         res.json({result: false, message: "로그인 실패", id : null});
@@ -31,15 +31,15 @@ const userInfo = async(req, res) => {
     const data = await userModel.userInfo(id);
 
     if(data.length > 0) {
-        res.json({result : true, message : "회원 정보 조회 성공", data});
+        res.json({result : true, message : "회원 정보 조회 성공", info : data});
     } else {
         res.json({result : false, message : "회원 정보 조회 실패"});
     }
 }
 //PATCH /update 회원수정
 const userUpdate = async(req, res) => {
-    const {name, pw, userid} = req.body;
-    const data = await userModel.userUpdate(name, pw, userid);
+    const {name, pw, id} = req.body;
+    const data = await userModel.userUpdate(name, pw, id);
 
     if(data.affectedRows != 0) {
         res.json({result : true, message : "수정 성공"});
@@ -47,7 +47,7 @@ const userUpdate = async(req, res) => {
         res.json({result : false, message : "수정 실패"})
     }
 }
-//DELETE /delete 회원삭제
+//DELETE /api/user/delete 회원삭제
 const userDelete = async(req, res) => {
     const {id} = req.body;
     const data = await userModel.userDelete(id);
