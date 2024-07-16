@@ -1,5 +1,4 @@
 const { DataTypes } = require('sequelize');
-const { all } = require('../routes/page');
 
 const user = (seq) => {
     return seq.define('user', {
