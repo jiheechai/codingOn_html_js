@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>Hello world!</h3>
+    <button id="hello">hello</button>
+    <button id="study">study</button>
+    <button id="bye">bye</button>
+    <ul>
+        <li id="text"></li>
+    </ul>
+
+    <script>
+        const socket = io();
+        const hello = document.querySelector('#hello');
+        const study = document.querySelector('#study');
+        const bye = document.querySelector('#bye');
+        const ul = document.querySelector('ul');
+        const li = document.querySelector('#text');
+
+        //접속 이벤트 생성. 연결 확인용
+        socket.emit('open_message', '접속되었습니다.', (res) => {
+            console.log(res);
+        });
+
+        //hello 버튼 이벤트
+        hello.addEventListener('click', () => {
+            // e.preventDefault();
+            // console.log("버튼클릭되나???");
+            socket.emit('hello_message', {msg : "hello"});
+        });
+
+        socket.on('msg_h', (arg) => {
+            li.textContent = `${arg.msg}`;
+            ul.appendChild(li);
+        });
+
+
+        //study 버튼 이벤트
+        study.addEventListener('click', () => {
+            // e.preventDefault();
+            socket.emit('study_message', {msg : "study"});
+        });
+
+        socket.on('msg_s', (arg) => {
+            li.textContent = `${arg.msg}`;
+            ul.appendChild(li);
+        });
+
+        //bye 버튼 이벤트
+        bye.addEventListener('click', () => {
+            // e.preventDefault();
+            socket.emit('bye_message', {msg : "bye"});
+        });
+
+        socket.on('msg_b', (arg) => {
+            li.textContent = `${arg.msg}`;
+            ul.appendChild(li);
+        });
+
+    </script>
+</body>
+</html>
