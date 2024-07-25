@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h3>대기 리스트</h3>
+
+    <p></p>
+    <ul></ul>
+
+    <script>
+        const ul = document.querySelector('ul');
+        
+        (async function() {
+            const result = await axios({
+                method : 'get',
+                url : '/api/client/waitingall' 
+            });
+            // console.log(result.data);
+            
+            result.data.forEach(element => {
+                const {id, clientId} = element;
+                const userName = element.client.userName;
+                const wait = 'id: ' + id + ', 고객번호: ' + clientId + ', 이름: ' + userName;
+                const li = document.createElement('li');
+                const btn = document.createElement('button');
+                btn.id=id;
+                const btnText = document.createTextNode('detail');
+                btn.onclick = buttonFunc;
+                btn.appendChild(btnText);
+                li.textContent = wait;
+                ul.appendChild(li);
+                li.appendChild(btn);
+            });
+        })();
+
+        //버튼 클릭시 디테일 p태그 안에 보여줌.
+        function buttonFunc() {
+            const id = this.id;
+            axios({
+                method: 'get',
+                url: `/api/client/waitingdetail/${id}`,
+            }).then((res) => {
+                console.log(res.data.response);
+                const {waitingStart, sts} = res.data.response;
+                const userName = res.data.response.client.userName;
+                const detail = '이름: ' + userName + ', 대기 시작 시간: ' + waitingStart + ', 상태: ' + sts;
+                const p = document.querySelector('p');
+                p.textContent = detail;
+            });
+        };
+    </script>
+</body>
+</html>

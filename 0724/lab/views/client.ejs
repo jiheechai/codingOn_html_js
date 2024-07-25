@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h3>고객 조회 페이지</h3>
+
+    <p></p>
+    <ul></ul>
+
+    <script>
+        const ul = document.querySelector('ul');
+        (async function() {
+            const result = await axios({
+                method : 'get',
+                url : '/api/client/clientall' 
+            });
+            console.log(result.data);
+            
+            result.data.forEach(element => {
+                const {id, userName} = element;
+                const wait = 'id: ' + id + ', 이름: ' + userName;
+                const li = document.createElement('li');
+                const btn = document.createElement('button');
+                btn.id=id;
+                const btnText = document.createTextNode('detail');
+                btn.onclick = buttonFunc;
+                btn.appendChild(btnText);
+                li.textContent = wait;
+                ul.appendChild(li);
+                li.appendChild(btn);
+            });
+        })();
+
+        //버튼 클릭시 디테일 p태그 안에 보여줌.
+        function buttonFunc() {
+            const id = this.id;
+            axios({
+                method: 'get',
+                url: `/api/client/clientdetail/${id}`,
+            }).then((res) => {
+                console.log(res.data.response);
+                const {id, userName, email} = res.data.response;
+                const detail = 'id: ' + id + ', 이름: ' + userName + ', 이메일: ' + email;
+                const p = document.querySelector('p');
+                p.textContent = detail;
+            });
+        };
+    </script>
+</body>
+</html>

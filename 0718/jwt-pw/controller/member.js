@@ -82,7 +82,7 @@ exports.update = async (req, res) => {
         const { password, username, age, email } = req.body;
         const find = await Member.findByPk(id);
         if (find) {
-            await Member.update({ password }, { where: { id } });
+            await Member.({ password }, { where: { id } });
             await Profile.update({ username, age, email }, { where: { memberId: id } });
             res.json({ result: true });
         } else {

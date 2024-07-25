@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h3>관리자 페이지</h3>
+
+    <ul id="waiting-list"></ul>
+
+    <form id="update-form">
+        <legend>id</legend><input type="text" id="id" />
+        <legend>상태</legend><input type="text" id="sts" />
+        <legend>고객이름</legend><input type="text" id="userName" /><br />
+        <button>변경</button>
+    </form>
+    
+    <script>
+        const socket = io();
+        let ID = 0;
+        //관리자 페이지 들어올때 최초 1회 실행
+        (async function() {
+            const ul = document.querySelector('ul');
+            const key = prompt('관리자 키를 입력하세요');
+            // console.log(data, "type: ", typeof(data));
+            // const key = "admin";
+            const data = {admin : key};
+            const result = await axios({
+                method : 'post',
+                url : '/api/client/admin',
+                data,
+            });
+            
+            // console.log(result.data.message);
+            console.log(result.data.flag);
+            if(!result.data.flag) {
+                alert('관리자 키가 틀렸습니다.');
+                document.location.href='/';
+            }
+            else{
+                // console.log(result.data.res);
+                result.data.res.forEach(element => {
+                    const {id, sts, clientId} = element;
+                    const userName = element.client.userName;
+                    const wait = 'id: ' + id + ', 상태: ' + sts + ', 고객이름: ' + userName;
+                    const li = document.createElement('li');
+                    li.setAttribute('id', id);
+                    li.textContent = wait;
+                    ul.appendChild(li);
+                    ID = id;
+                });
+                console.log(ID);
+                socket.emit('create', {ID});
+            }    
+        })();
+
+        const updateForm = document.querySelector('#update-form');
+        updateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const id = document.querySelector('#id').value;
+            const sts = document.querySelector('#sts').value;
+            const userName = document.querySelector('#userName').value;
+            const data = {sts, id};
+            axios({
+                method : 'post',
+                url : '/api/client/update',
+                data
+            }).then((res) => {
+                socket.emit('update', {id, sts});
+                socket.on('updateResult', (arg) => {
+                    const ul = document.querySelector('ul');
+                    const oldnode = document.querySelector(`li#${CSS.escape(id)}`);
+                    // console.log(oldnode);
+                    const newnode = document.createElement('li');
+                    console.log(newnode);
+                    // console.log(arg.id, arg.sts);
+                    newnode.setAttribute('id', id);
+                    const wait = 'id: ' + id + ', 상태: ' + arg.sts + ', 고객이름: ' + userName;
+                    newnode.textContent = wait;
+
+                    // if(oldnode && oldnode.parentNode) {
+                        oldnode.parentNode.replaceChild(newnode, oldnode);
+                    // }
+                })
+            });
+        });
+
+
+        //소켓
+        // socket.on('waitingList', (arg) => {
+        //     const waitingList = document.querySelector('#waiting-list');
+        //     console.log('waitingList', arg);
+        //     arg.forEach((waiting) => {
+        //         const li = document.createElement('li');
+        //         li.textContent = waiting;
+        //         waitingList.appendChild(li);
+        //     });
+        // });
+    </script>
+</body>
+
+</html>

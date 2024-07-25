@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h3>웨이팅 등록</h3>
+    <form id="client-form">
+        <input type="text" id="name" placeholder="이름" /><br />
+        <input type="email" id="email" placeholder="이메일" /><br />
+        <button>등록</button>
+    </form>
+
+    <p id="waiting"><a href="./waiting">웨이팅 목록 조회</a></p>
+    <p id="client"><a href="./client">전체 고객 조회</a></p>
+    <p id="admin"><a href="./admin">관리자 페이지</a></p>
+
+    <script>
+        const socket = io();
+        const form = document.querySelector('#client-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = {
+                userName : document.querySelector('#name').value,
+                email : document.querySelector('#email').value,
+            };
+
+            axios({
+                method:'post',
+                url:'/api/client/add',
+                data
+            }).then((res)=> {
+                // console.log(res);
+                socket.emit('newone', {id, sts});
+                socket.on('newoneResult', (arg) => {
+                //     const ul = document.querySelector('ul');
+                //     const oldnode = document.querySelector(`li#${CSS.escape(id)}`);
+                //     // console.log(oldnode);
+                //     const newnode = document.createElement('li');
+                //     console.log(newnode);
+                //     // console.log(arg.id, arg.sts);
+                //     newnode.setAttribute('id', id);
+                //     const wait = 'id: ' + id + ', 상태: ' + arg.sts + ', 고객이름: ' + userName;
+                //     newnode.textContent = wait;
+                //     // ul.appendChild(newnode);
+                    
+                //     oldnode.parentNode.replaceChild(newnode, oldnode);
+                })
+                alert('대기 신청 완료. 잠시만 대기해 주세요.');
+                document.location.href = './client';
+            })
+
+        })
+    </script>
+</body>
+</html>

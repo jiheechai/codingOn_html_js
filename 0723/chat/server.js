@@ -5,7 +5,6 @@ const app = express();
 const PORT = 8000;
 
 app.set('view engine', 'ejs');
-
 const server = http.createServer(app);
 const io = socketIo(server);
 
@@ -38,7 +37,6 @@ io.on('connection', (socket) => {
             //갱신됐을때 목록을 클라이언트에 전달, 전체가 봐야 함.
             //io.emit('roomList', roomList);
         }
-
     });
 
     socket.on('sendMessage', (arg) => {

@@ -5,7 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/socket.io/socket.io.js"></script>
+    <style>
+        div#message {
+            position: relative;
+            background-color: skyblue;
+            height:800px;
+            width: 400px;
+        }
+        p#me {
+
+            text-align: right;    
+        }
+        p#me span {
+            margin : 10px;
+            padding: 7px;
+            border-radius: 5%;
+            background-color: yellow;
+        }
+        p#other {
+            
+            text-align: left;
+        }
+        p#other span {
+            margin : 10px;
+            padding: 7px;
+            border-radius: 5%;
+            background-color: white;
+        }
+        div#notice {
+            margin-bottom : 20px;
+        }
+
+    </style>
 </head>
+
+
 <body>
     <h3>채팅방</h3>
     <div id="room">
@@ -34,14 +68,15 @@
         const chatForm = document.querySelector('#chat-form');
         const notice = document.querySelector('#notice');
         const message = document.querySelector('#message');
-        // const user = document.querySelector('#userName');
+        let USER;
 
         //룸 폼 이벤트
         roomForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const roomName = roomForm.querySelector('#roomName').value;
             const userName = roomForm.querySelector('#userName').value;
-
+            USER = userName;
+            console.log(USER);
             if(roomName === '' || userName === '') {
                 alert('방이름과 닉네임을 적어주세요.');
                 return ;
@@ -53,14 +88,7 @@
             chat.hidden = false;
         });
 
-        //소켓이벤트
-        socket.on('notice', (arg) => {
-            console.log(arg);
-            const p = document.createElement('p');
-            p.textContent = arg;
-            notice.appendChild(p);
-        });
-
+        //방 리스트 보여주는 소켓 이벤트
         socket.on('roomList', (arg) => {
             const roomList = document.querySelector('#room-list');
             roomList.textContent = '';
@@ -71,6 +99,13 @@
                 roomList.appendChild(li);
             });
         });
+        //"~님이 입장하셨습니다" 소켓
+        socket.on('notice', (arg) => {
+            console.log(arg);
+            const p = document.createElement('p');
+            p.textContent = arg;
+            notice.appendChild(p);
+        });
 
         //채팅 폼 이벤트
         chatForm.addEventListener('submit', (e) => {
@@ -80,13 +115,22 @@
             socket.emit('sendMessage', {message : msg.value, userName});
             msg.value = '';
         });
-
+        //채팅 메세지 띄워주는 소켓
         socket.on('newMessage', (arg) => {
-            const p = document.createElement('p');
-            const msg = arg.userName + " : " + arg.message
-            p.textContent = msg;
+            const p =document.createElement('p');
+            const sp = document.createElement('span');
+            const msg = arg.userName + " : " + arg.message;
+            if(arg.userName === USER) {
+                p.setAttribute('id', 'me');
+            } else {
+                p.setAttribute('id', 'other');
+            }
+            console.log("p의 id: ", p.id);
+            sp.textContent = msg;
+
             message.appendChild(p);
-        })
+            p.appendChild(sp);
+        });
 
     </script>
 </body>
