@@ -21,7 +21,7 @@
     
     <script>
         const socket = io();
-        let ID = 0;
+        // let ID = 0;
         //관리자 페이지 들어올때 최초 1회 실행
         (async function() {
             const ul = document.querySelector('ul');
@@ -36,7 +36,7 @@
             });
             
             // console.log(result.data.message);
-            console.log(result.data.flag);
+            // console.log(result.data.flag);
             if(!result.data.flag) {
                 alert('관리자 키가 틀렸습니다.');
                 document.location.href='/';
@@ -53,7 +53,7 @@
                     ul.appendChild(li);
                     ID = id;
                 });
-                console.log(ID);
+                // console.log(ID);
                 socket.emit('create', {ID});
             }    
         })();
@@ -90,17 +90,28 @@
             });
         });
 
+        
+        //새로운 대기리스트 추가되는 소켓 -->>안됨!!!!
+        socket.on('newoneResult', (arg) => {
+            console.log(arg);
 
-        //소켓
-        // socket.on('waitingList', (arg) => {
-        //     const waitingList = document.querySelector('#waiting-list');
-        //     console.log('waitingList', arg);
-        //     arg.forEach((waiting) => {
-        //         const li = document.createElement('li');
-        //         li.textContent = waiting;
-        //         waitingList.appendChild(li);
-        //     });
-        // });
+            const ul = document.querySelector('ul');
+            axios({
+                method : 'get',
+                url : `/api/client/waitingdetail/${arg.id}`,
+            }). then((res) => {
+                console.log(res);
+                const {id, sts, userName} = res;
+                const li = document.createElement('li');
+                console.log(li);
+                li.setAttribute('id', id);
+                const wait = 'id: ' + id + ', 상태: ' + arg.sts + ', 고객이름: ' + userName;
+                li.textContent = wait;
+                ul.appendChild(li);
+            });
+                    
+        })
+
     </script>
 </body>
 

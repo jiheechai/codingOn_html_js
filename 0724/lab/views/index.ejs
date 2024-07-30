@@ -34,22 +34,9 @@
                 url:'/api/client/add',
                 data
             }).then((res)=> {
-                // console.log(res);
-                socket.emit('newone', {id, sts});
-                socket.on('newoneResult', (arg) => {
-                //     const ul = document.querySelector('ul');
-                //     const oldnode = document.querySelector(`li#${CSS.escape(id)}`);
-                //     // console.log(oldnode);
-                //     const newnode = document.createElement('li');
-                //     console.log(newnode);
-                //     // console.log(arg.id, arg.sts);
-                //     newnode.setAttribute('id', id);
-                //     const wait = 'id: ' + id + ', 상태: ' + arg.sts + ', 고객이름: ' + userName;
-                //     newnode.textContent = wait;
-                //     // ul.appendChild(newnode);
-                    
-                //     oldnode.parentNode.replaceChild(newnode, oldnode);
-                })
+                console.log(res);
+                const id = res.data.id;
+                socket.emit('newone', {id});
                 alert('대기 신청 완료. 잠시만 대기해 주세요.');
                 document.location.href = './client';
             })

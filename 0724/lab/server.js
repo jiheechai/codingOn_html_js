@@ -20,6 +20,7 @@ const clientRouter = require('./routes/client');
 app.use('/api/client', clientRouter);
 
 io.on('connection', (socket) => {
+    console.log(`socket conenction ${socket.id}`);
     socket.on('create', (arg) => {
         console.log('create: ', arg);
     });
@@ -30,7 +31,7 @@ io.on('connection', (socket) => {
 
     socket.on('newone', (arg) => {
         console.log('newone: ', arg);
-        socket.emit('newoneResult', arg);
+        io.emit('newoneResult', arg);
     })
 })
 

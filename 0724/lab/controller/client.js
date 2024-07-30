@@ -41,8 +41,8 @@ exports.addList = async(req, res) => {
             const waitingEnd = "";
 
             //대기열 db에 넣는다.
-            await Waiting.create({sts, waitingStart, waitingEnd, clientId: result.id});
-            res.json({result : true});
+            const waitResult = await Waiting.create({sts, waitingStart, waitingEnd, clientId: result.id});
+            res.json({result : true, id : waitResult.id});
         }
     } catch(error) {
         console.log(error);
